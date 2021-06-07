@@ -1,8 +1,8 @@
 ---
-layout: post
 title: Security and Caching headers with S3 websites
 description: Lambda @ Edge 
-fullview: true
+date: 2018-03-22
+tags: [AWS, S3, static hosting]
 ---
 
 # Using Lambda @ Edge to add headers to S3 websites

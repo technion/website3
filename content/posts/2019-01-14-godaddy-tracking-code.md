@@ -1,8 +1,8 @@
 ---
-layout: post
 title: Reverse engineering GoDaddy's tracking script
 description: Reverse engineering GoDaddy's tracking script
-fullview: true
+date: 2019-01-14
+tags: [godaddy, tracking]
 ---
 
 # Background

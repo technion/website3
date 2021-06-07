@@ -1,8 +1,8 @@
 ---
-layout: post
 title: Property based tests, contracts with Ruby
 description: Property based tests, contracts with Ruby
-fullview: true
+date: 2015-07-19
+tags: [tests, ruby]
 ---
 
 ### Base App

@@ -1,8 +1,8 @@
 ---
-layout: post
 title: Let's Encrypt - It's happening
 description: Trialling early Ruby ACME client for Lets Encrypt
-fullview: true
+date: 2015-10-27
+tags: [Lets Encrypt]
 ---
 
 ### Using Lets Encrypt

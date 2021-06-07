@@ -1,8 +1,8 @@
 ---
-layout: post
 title:  Use protobufs - now
 description: Benchmarking protobufs against JSON
-fullview: true
+date: 2016-05-23
+tags: [protobuffs, benchmark]
 ---
 
 ## Introduction

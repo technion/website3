@@ -1,8 +1,8 @@
 ---
-layout: post
 title: The improving state of SSL deployment
-fullview: true
 description: Certificate Transparency monitoring service gives us great new insights into the increasing deployment of SSL certificates
+date: 2016-10-20
+tags: [Certificate Transparency]
 ---
 
 ## Increase in SSL use

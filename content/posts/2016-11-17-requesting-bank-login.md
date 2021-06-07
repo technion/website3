@@ -1,8 +1,8 @@
 ---
-layout: post
 title: mwave requests bank logins of customers 
 description: Apparently mwave actually think a reasonable method of running ecommerce is to simply ask for the logon to your online banking.
-fullview: true
+date: 2016-11-17
+tags: [mwave, bank]
 ---
 
 # Right when you thought security couldn't get any worse

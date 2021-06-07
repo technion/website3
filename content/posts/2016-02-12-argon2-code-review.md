@@ -1,8 +1,8 @@
 ---
-layout: post
 title: Argon2 code audits - part one - Infer
 description: Using Facebook Infer static analysis tool against argon2
-fullview: true
+date: 2016-02-12
+tags: [argon2, code review]
 ---
 
 ## Introduction

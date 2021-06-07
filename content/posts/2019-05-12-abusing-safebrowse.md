@@ -1,8 +1,8 @@
 ---
-layout: post
 title: Abusing Google Safebrowse for phished credentials URLs
 description: What safebrowse looks for, and finding it yourself
-fullview: true
+date: 2019-05-12
+tags: [google, safebrowse]
 ---
 
 # When Google Safebrowse scans your site

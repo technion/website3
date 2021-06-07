@@ -1,8 +1,8 @@
 ---
-layout: post
 title: Netregistry has no support for MFA either
 description: Because domains don't need security apparently
-fullview: true
+date: 2017-05-10
+tags: [Netregistry, MFA]
 ---
 
 # Namecheap has recently come under fire

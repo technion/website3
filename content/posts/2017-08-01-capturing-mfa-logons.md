@@ -1,8 +1,8 @@
 ---
-layout: post
 title: Intercepting and Capturing MFA Logons
 description: That push notification isn't a silver bullet
-fullview: true
+date: 2017-08-01
+tags: [intercept, MFA]
 ---
 
 # Intercepting and Capturing MFA Logons

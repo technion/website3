@@ -1,8 +1,8 @@
 ---
-layout: post
 title: Continuous Backup Tests with Docker 
 description: Using docker to automate a database restoration and continuously test backups
-fullview: true
+date: 2017-02-02
+tags: [Continuous, Backup, Docker]
 ---
 
 Side issue: These snippets would ideally be embedded gists for ease of management - but AMP prevents this. At some point I'll come up with a fix, which may well be to ditch AMP.

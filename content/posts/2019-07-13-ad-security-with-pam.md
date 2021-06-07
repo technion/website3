@@ -1,8 +1,8 @@
 ---
-layout: post
 title: Secure Privileged Active Directory management with PAM and JEA
 description: Active Directory Domain Just Enough Administration and Privileged Administration
-fullview: true
+date: 2019-07-13
+tags: [active directory, jea, pam ]
 ---
 
 # Introduction to the tooling

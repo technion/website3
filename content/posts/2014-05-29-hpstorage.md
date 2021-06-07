@@ -1,8 +1,8 @@
 ---
-layout: post
 title: HP D2D / Storeonce Backdoor
 description: HP's D2D Backdoor passwords
-fullview: true
+date: 2014-05-29
+tags: [hpe, storeonce, backdoor]
 ---
 
 ### Introduction

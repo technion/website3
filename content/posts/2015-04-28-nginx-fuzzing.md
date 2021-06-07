@@ -1,8 +1,8 @@
 ---
-layout: post
 title: Fuzzing nginx - Hunting vulnerabilities with afl-fuzz
 description: Fuzzing nginx with afl-fuzz for vulnerabilities
-fullview: true
+date: 2015-04-28
+tags: [fuzzing, nginx]
 ---
 
 ### No 0day here

@@ -1,8 +1,8 @@
 ---
-layout: post
 title: Enumerating Azure Federated Domains
 description: Discovering more than just subdomains 
-fullview: true
+date: 2018-05-09
+tags: [AzureAD, enumeration]
 ---
 
 ## Enumeration Introduction

@@ -1,8 +1,8 @@
 ---
-layout: post
 title: Hack The Box DAB Writeup Security Assessment
 description: Hack the box 'DAB' writeup
-fullview: true
+date: 2019-02-03
+tags: [Hack the Box, DAB]
 ---
 
 # Introduction to the target.

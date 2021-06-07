@@ -1,8 +1,8 @@
 ---
-layout: post
 title: Obtaining Corporate Credentials via the Autodiscover Circus
 description: Obtaining Corporate Credentials via the Autodiscover Circus
-fullview: true
+date: 2020-09-02
+tags: [autodiscover, vulnerabililty]
 ---
 
 # Layout

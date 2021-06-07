@@ -1,8 +1,8 @@
 ---
-layout: post
 title: nginx - Built against LibreSSL
 description: nginx - Built against LibreSSL
-fullview: true
+date: 2015-04-06
+tags: [nginx, libressl]
 ---
 
 ### CentOS

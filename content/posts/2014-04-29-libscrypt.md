@@ -1,8 +1,8 @@
 ---
-layout: post
 title: libscrypt - password hashing library
 description: libscrypt - password hashing library
-fullview: true
+date: 2014-04
+tags: [libscrypt]
 ---
 
 ### Introduction

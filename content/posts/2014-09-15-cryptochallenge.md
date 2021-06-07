@@ -1,8 +1,8 @@
 ---
-layout: post
 title: Taking the Matasano Crypto Challenge
 description: Blog on the process of taking the cryptopals / matasanto crypto chalenge
-fullview: true
+date: 2014-09-15
+tags: [crypto, challenge]
 ---
 
 ### Salespeople

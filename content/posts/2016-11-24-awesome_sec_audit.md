@@ -1,9 +1,8 @@
 ---
-layout: post
 title:  Awesome security audit
 description: Is it a real security audit, or is it a React/Typscript template? Why not both?
 needsframes: true
-fullview: true
+date: 2016-11-24
 ---
 
 # Awesome Sec Audit
