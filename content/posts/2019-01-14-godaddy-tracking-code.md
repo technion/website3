@@ -20,23 +20,11 @@ I've built an empty website and copied the tracking code onto it. You can find t
 
 The good news is, uBlock blocks this tracking by default. By disabling uBlock, you can get a view of exactly what this script is doing. You can see the callout in the network monitor below, along with the long list of information it provides.
 
-<amp-img alt="Network monitor on GoDaddy tracking"
-    src="/assets/images/trackingsadness1.jpg"
-    height="622"
-    width="1905"
-    layout="responsive"
-    >
-</amp-img>
+![Network monitor on GoDaddy tracking](/media/images/trackingsadness1.jpg)
 
 It's obvious a lot of this is performance related, but at this point, I can't account for every parameter.
 
-<amp-img alt="Tracking Parameters"
-    src="/assets/images/trackingsadness2.jpg"
-    height="624"
-    width="821"
-    layout="responsive"
-    >
-</amp-img>
+![Tracking Parameters](/media/images/trackingsadness2.jpg)
 
 # Cleanup
 
@@ -56,13 +44,7 @@ This acheives quite a bit on its own.
 
 Javascript gets a lot of crap, but it doesn't get nearly enough crap specifically about the IFFE. Refactoring to remove the outer IIFE makes the code a lot more readable. It also moves all the functions to the global space. You generally don't want that, but for us, it means we can access everything directly from the browser. Below you can see that the entire codebase is about exporting three different functions, noting we just wrote a() and b() ourselves.
 
-<amp-img alt="Exported functions"
-    src="/assets/images/trackingsadness3.jpg"
-    height="574"
-    width="833"
-    layout="responsive"
-    >
-</amp-img>
+![Exported Functions](/media/images/trackingsadness3.jpg)
 
 # Disecting the remaining code
 
@@ -93,7 +75,7 @@ Produces the same ten console logs every time. But if you keep running c(); from
 
 Line 18 looks very similar, in fact there's a comment telling us what happens.
 
-``` javascript
+```javascript
         //second guid fragment .. use MS time from EPOCH
         function d() {
             var a = new Date,
@@ -106,7 +88,7 @@ d is similarly a pseudorandom function, but this one appears guaranteed to gener
 
 It turns out we have five different randomness functions just to feed:
 
-``` javascript
+```javascript
         function b(a) {
             return c() + "-" + d() + "-" + e() + "-" + f() + "-" + g(a)
         }
@@ -114,7 +96,7 @@ It turns out we have five different randomness functions just to feed:
 
 tl;dr Everything down to line 61 does just what it says, provides a function that generates a GUID. You can play with this in the Chrome console:
 
-``` javascript
+```javascript
 c().generateGuid(1)
 "20a18e2f-7446-4ac2-b86b-10a9f7480d78"
 c().generateGuid(undefined)

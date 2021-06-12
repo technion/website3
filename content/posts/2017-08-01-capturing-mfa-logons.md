@@ -29,62 +29,26 @@ Not included: A decent phishing scam. Here's one we made earlier. Do note, peopl
 
 This email has been about 80% successful in at least getting a link clicked in testing.
 
-<amp-img alt="Steve Jobs Email"
-  src="/assets/images/phish_email.png"
-  width="668"
-  height="619"
-  layout="responsive">
-</amp-img>
-
+![Steve Jobs Email](/media/images/phish_email.png)
 With that out in the field, fire up the capturing service.
 
-<amp-img alt="MFA capture server"
-  src="/assets/images/capture_server.png"
-  width="643"
-  height="149"
-  layout="responsive">
-</amp-img>
-
+![MFA Capture Server](/media/images/capture_server.png)
 Now here is the somewhat convoluted part. As an attacker, open up the legitimate website, and enter the victim's email address. Office 365 does a series of Javascript magic with this before it allows a password to be entered, and I don't hate myself enough to come up with the Javascript to automate dealing with it.
 
 With that done, grab the .js file and - after setting the URL appropriately - paste it into the console. Your attacker's window will now poll the attacking server for a set of credentials. It should all end up looking a bit like this.
 
-<amp-img alt="MFA Attacker Logon"
-  src="/assets/images/attacker_login.png"
-  width="1606"
-  height="632"
-  layout="responsive">
-</amp-img>
-
+![MFA Attacker Logon](/media/images/attacker_login.png)
 Being a good victim, the recipient of the phishing email is meanwhile sitting on this password capture page.
 
-<amp-img alt="MFA Victim Logon"
-  src="/assets/images/victim_login1.png"
-  width="929"
-  height="588"
-  layout="responsive">
-</amp-img>
-
+![MFA Victim Logon](/media/images/victim_login1.png)
 The user of course, will happily enter a password. And in more basic solutions, the password would be captured, and that's the end of the story. But this isn't a basic solution, because the user did the right thing and setup MFA.
 
 Fortunately, our more advanced phishing page has a fake MFA page, which is in line with a user's expectations based on their normal logon.
 
-<amp-img alt="MFA Victim Logon2"
-  src="/assets/images/victim_login2.png"
-  width="901"
-  height="581"
-  layout="responsive">
-</amp-img>
-
+![MFA Victim Logon](/media/images/victim_login2.png)
 The magic of our attacker's console Javascript kicks in here, as it obtains the user's password, posts the logon form - and has the attacker trigger and MFA logon for the account.
 
-<amp-img alt="MFA Attacker Logon2"
-  src="/assets/images/attacker_login2.png"
-  width="1061"
-  height="675"
-  layout="responsive">
-</amp-img>
-
+![MFA Attacker Logon](/media/images/attacker_login2.png)
 Where the story ends of course is that the victim approves the MFA notification, and the attacker is suddenly looking at their inbox.
 
 ## Further work
@@ -107,11 +71,5 @@ Your real defence here is in the form of U2F based MFA. It does have an increase
 
 Although you can Google "Amazon U2F" and get a whole lot of options for buying keys online, AWS appears to [currently only offer TOTP or SMS based MFA](https://aws.amazon.com/iam/details/mfa/). It's ironic that you can sink money into hardware tokens for a feeling of "extra security", but noone can explain why this attack couldn't be adapted to a page that looks like this:
 
-<amp-img alt="AWS MFA Logon"
-  src="/assets/images/awslogon.png"
-  width="1152"
-  height="648"
-  layout="responsive">
-</amp-img>
-
+![AWS MFA Logon](/media/images/awslogon.png)
 These are the types of articles that sales people like to use as proof of some kind of advantage of FIPS compliance. I don't know if I should laugh or cry.

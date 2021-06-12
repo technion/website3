@@ -111,13 +111,7 @@ Microsoft's article discusses the *ExcludeHttpRedirect* registry key, but for mo
 The most approachable I've come up with is that a redirect can be put in place upstream if you use a service like Cloudflare. The following page rule takes this URL out of the hands of a web host by redirecting the connection to the correct place.
 
 
-<amp-img
-    src="/assets/images/autodiscoverpagerule.png"
-    height="322"
-    width="827"
-    alt="Cloudflare autodiscover page rule"
-    layout="responsive"
-    ></amp-img>
+![Autodiscover rule](/media/images/autodiscoverpagerule.png)
 
 The practical365 site states "the root domain lookup makes absolutely no sense to me" and any attempt to read a discussion on the issue will lead you to plenty of discussion of this as nonsense. Unfortunately for as long as this priority exists, this problem will.
 

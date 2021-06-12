@@ -19,13 +19,7 @@ I went and logged in to check my MFA, was surprised I didn't already have it run
 
 Eventually I logged a support case, adament it was probably a case of me not looking hard enough. When that case never got a response, I opened a live chat. I'll let it speak for itself.
 
-[Netregistry](assets/images/netregistry.png)
-<amp-img src="/assets/images/netregistry.png"
-    height="780"
-    width="788"
-    layout="responsive"
-    alt="netregistry support on mfa">
-</amp-img>
+![Netregistry](/media/images/netregistry.png)
 
 # We are all guilty
 
@@ -35,12 +29,7 @@ Then you sit around and lament the badness.
 
 I'm not going to start a Twitter campaign. I'm just going to vote with my feet. My domains are being transferred.
 
-<amp-img src="/assets/images/migrate.png"
-    height="189"
-    width="1264"
-    layout="responsive"
-    alt="mwave purchase">
-</amp-img>
+![Migrate Domain](/media/images/migrate.png)
 
 Amazon of course, fully supports MFA. Unfortunately, I have a few more days until I can move the last of my domains, [Get Cryptolocker](https://getcryptolocker.com), due to [ICANN's new 60 day policy](https://opensrs.com/blog/2016/06/icanns-new-transfer-policy-will-impact-business-customers/).
 
@@ -50,10 +39,4 @@ Unlike Namecheap, which at least apparently support SMS, [Netregistry don't supp
 
 Fortunately, they seem completely unconcerned about people going elsewhere:
 
-<amp-img src="/assets/images/nocare.png"
-    height="189"
-    width="1264"
-    layout="responsive"
-    alt="mwave purchase">
-</amp-img>
-
+![No Care](/media/images/nocare.png)

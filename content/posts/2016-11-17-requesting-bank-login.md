@@ -11,21 +11,11 @@ This blog will be short and sweet because a few images say it all.
 
 I've spent a lot of time trying to educate people on being careful with credentials. It really doesn't help when I try to place a purchase with a "legitimate" supplier, and, after handing over valid credit card details, I get this:
 
-<amp-img src="/assets/images//mwavewhy.jpg"
-    height="530"
-    width="1047"
-    layout="responsive"
-    alt="mwave purchase"></amp-img>
+![mware why](/media/images/mwavewhy.jpg)
 
 Not only is it not a troll, it's well documented in their FAQ:
 
-<amp-img src="/assets/images//mwavewhy2.jpg"
-    height="89"
-    width="1002"
-    layout="responsive"
-    alt="mwave request bank logins"></amp-img>
-
-The frustrating part is not that they do this. It's that they apply the charge to your card a day before giving you this prompt, leaving you begging for refunds when you refuse.
+![mwave request bank logins](/media/images/mwavewhy2.jpg)
 
 Yes, I've spoken to them. They don't see an issue. Yes, mwave thinking requesting your bank login credentials is just a normal thing.
 

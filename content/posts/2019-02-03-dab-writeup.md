@@ -12,13 +12,7 @@ Here we present a writeup of the "Dab" server and the applications it hosts. As 
 ## FTP
 The ftp service accepts anonymous logons appears to have the single purpose of serving the organisation logo.
 
-<amp-img alt="Dab logo"
-    src="/assets/images/dab.jpg"
-    height="680"
-    width="733"
-    layout="responsive"
-    >
-</amp-img>
+![Dab Logo](/media/images/dab.jpg)
 
 ### Recommendation
 Although no significant issue is currently found here, in order to reduce attack surface, this service should be considered for removal.
@@ -38,7 +32,7 @@ It takes just a few minutes to identify a valid logon, and it should be stressed
 
 The second service to review is the developer's console, on port 8080. This service utilises a more complex authentication system. The below custom code was built from reviewing browser interactions with the site, and will similarly brute force a valid credentials.
 
-```
+```ruby
 #!/usr/bin/env ruby
 #
 require 'httpclient'
@@ -74,7 +68,7 @@ Rather than review credentials systems, the developer console could consider alt
 ## Utilising the developer console
 The developer console can be utilised to connect to an arbitrary local port. The following script has been developed to enumerate all local services by abusing this functionality of the developer's console. This identifies access to several ports not accessible from the outside world.
 
-```
+```ruby
 #!/usr/bin/env ruby
 #
 require 'httpclient'
@@ -115,7 +109,7 @@ http://SERVER:8080/socket?port=11211&cmd=stats+items
 
 With this background, the below script can be utilised to dump cached passwords. It is required to manually attempt to logon to the console shortly before running this script.
 
-```
+```ruby
 #!/usr/bin/env ruby
 #
 require 'json'

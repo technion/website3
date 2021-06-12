@@ -14,18 +14,8 @@ As silly as this is, I've now experienced setting up a website on S3, and a Clou
 
 Kids, don't use AMP. Do however, scroll past this placeholder:
 
-<amp-img
-    src="/assets/images/placehold700.png"
-    height="550"
-    width="350"
-    alt="A silly placeholder"
-    layout="responsive"
-    ></amp-img>
-
-
-<amp-iframe width=600 height=200
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    frameborder="0"
+*Edit: AMP is dead baby*
+<iframe 
     src="https://d86c84grgz45x.cloudfront.net/reactexample.html">
-</amp-iframe>
+    sandbox
+></iframe>

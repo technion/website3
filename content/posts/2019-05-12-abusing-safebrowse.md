@@ -47,13 +47,7 @@ You can find it here: [https://gist.github.com/technion/cf433786d770e4a270e40f72
 
 Anyone with access to a spam quarantine should have thousands of phishing URLs at the ready, and in most cases they are unreported. A good example was found in a URL involving the extremely heavily abused 000webhostapp.com domain. Although they were responsive to my reports and pulled the site down in literally minutes, I censored this full domain as I couldn't guarantee the file involved wasn't found in a search cache somewhere. 
 
-<amp-img alt="Dab logo"
-    src="/assets/images/000webhosturlscan.png"
-    height="613"
-    width="1224"
-    layout="responsive"
-    >
-</amp-img>
+![000Webhost URL Scan](/media/images/000webhosturlscan.png)    
 
 This is what it urlscan.io shows us about the site. Yep, that sure looks like phishing. And clearly brand new, and it's "clean" here and according to virustotal. Let's run our script against the domain:
 
