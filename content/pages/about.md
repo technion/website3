@@ -1,12 +1,13 @@
 ---
 title: 'About Me'
-profile_image: '/media/profile-image.jpg'
+profile_image: '/media/images/dalfie.png'
 template: 'about-template'
 ---
 
-# Hi, I'm John Doe
+# About Me
 
-This website is a live example of a Gatsby Starter — it's not a real blog.
-People using this starter may want to add some information to this page about them or their business.
+Some of my key projects to look into are:
 
+- [CT Advisor](https://ctadvisor.lolware.net/)
+- [Ruby Argon2 Gem](https://github.com/technion/ruby-argon2)
 

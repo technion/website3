@@ -2,6 +2,7 @@
 title: Obtaining Corporate Credentials via the Autodiscover Circus
 description: Obtaining Corporate Credentials via the Autodiscover Circus
 date: 2020-09-02
+social_image: '/media/images/somuchwin.png'
 tags: [autodiscover, vulnerabililty]
 ---
 
@@ -15,7 +16,7 @@ We regularly see this when major businesses are compromised. This is unfortunate
 
 Anyone who has read the web access log on such a server has probably found themselve Googling what autodiscover.xml is. Here's an example from my own server, of something which may be rare if you have a few users. I grepped an larger organisation's log and found around 1200 hits per day.
 
-```
+```bash
 020/09/02 05:54:40 [error] 385#385: *33613 open() "/var/www/html/autodiscover/autodiscover.xml" failed (2: No such file or directory),
     client: 1.2.3.4, server: lolware.net, request: "POST /autodiscover/autodiscover.xml HTTP/1.1", host: "lolware.net"
 ```
@@ -33,7 +34,7 @@ I quite like this article as the reference to the web hosting circus will be qui
 
 The problem with the autodiscovery situation described is that I can put a redirect in my web server's nginx config:
 
-```
+```bash
         location /autodiscover/autodiscover.xml {
             proxy_set_header X-Forwarded-For $remote_addr;
             proxy_pass http://localhost:8089;
@@ -42,7 +43,7 @@ The problem with the autodiscovery situation described is that I can put a redir
 
 And of course similar options exist for Apache. With this in place, here's a dump of a proxied connection:
 
-```
+```bash
 [2020-09-02 06:09:09] ERROR `/autodiscover/autodiscover.xml' not found.
 127.0.0.1 - - [02/Sep/2020:06:09:09 UTC] "POST /autodiscover/autodiscover.xml HTTP/1.0" 404 299
 - -> /autodiscover/autodiscover.xml
