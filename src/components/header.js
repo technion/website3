@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Container from './container';
 import { useStaticQuery, graphql } from 'gatsby';
+import SocialLinks from './social-links';
 
 const Header = () => {
   const { site } = useStaticQuery(
@@ -26,7 +27,7 @@ const Header = () => {
 
         <HeaderNavList>
           <HeaderNavListItem>
-            <Link to="/blog">Blog</Link>
+    <SocialLinks />
           </HeaderNavListItem>
 
           <HeaderNavListItem>

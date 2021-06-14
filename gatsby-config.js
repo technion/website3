@@ -1,27 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Glass`,
+    title: `Lolware`,
     author: {
-      name: `Yinka Adedire`,
-      summary: `Self-taught front-end web dev. JAMStack.`,
+      name: `Blogging on security and insecurity`,
+      summary: `JAMStack.`,
     },
-    description: `A minimal & beautiful gatsby personal blog starter with a nice glassmorphism UI.`,
-    siteUrl: `https://gatsbyglass.netlify.app`,
+    description: `Blogging on security and insecurity`,
+    siteUrl: `https://lolware.net`,
     social: {
       twitter: `yinkakun`,
     },
     socialLinks: [
       {
         name: 'github',
-        url: 'https://github.com',
-      },
-      {
-        name: 'twitter',
-        url: 'https://twitter.com',
-      },
-      {
-        name: 'instagram',
-        url: 'https://instagram.com',
+        url: 'https://github.com/technion/',
       },
     ],
   },
