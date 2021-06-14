@@ -3,6 +3,5 @@
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: no-referrer
   X-Content-Type-Options: nosniff
-  Content-Security-Policy: default-src 'self'; script-src 'unsafe-inline'; frame-src vivirenremoto.github.io; frame-ancestors 'none'
   Permissions-Policy: interest-cohort=()
-
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-src vivirenremoto.github.io; frame-ancestors 'none'; report-uri https://lolware.report-uri.com/r/d/csp/enforce
