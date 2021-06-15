@@ -4,5 +4,5 @@
   Referrer-Policy: no-referrer
   X-Content-Type-Options: nosniff
   Permissions-Policy: interest-cohort=()
-  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload;
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' www.google-analytics.com www.googletagmanager.com; style-src 'self' 'unsafe-inline' www.google-analytics.com; img-src 'self' www.googletagmanager.com; connect-src 'self' www.google-analytics.com; frame-src vivirenremoto.github.io; frame-ancestors 'none'; report-uri https://lolware.report-uri.com/r/d/csp/enforce

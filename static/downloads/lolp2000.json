@@ -1,0 +1,18 @@
+{
+   "operations" :
+   {
+      "start" :
+      [
+		 
+	"storage core claimrule add --rule 110 -t location -C 0 -L 0 -P MASK_PATH",
+
+      ]
+   }
+   ,
+   "metadata" :
+   {
+      "version"  : 1,
+      "requires" : ["local storage support"],
+      "provides" : ["path masks"]
+   }
+}

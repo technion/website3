@@ -1,0 +1,40 @@
+{
+   "operations" :
+   {
+      "start" :
+      [
+         /* Register plugin */
+         /* use -d <dependency_on_any_other_module_if_any> if necessary */
+         "storage core plugin registration add -m hp_vaaip_p2000 -N VAAI -P HP_VAAIP_P2000",
+
+         /* Add the Filter Rule for FC */
+         "storage core claimrule add --claimrule-class Filter --autoassign --plugin VAAI_FILTER --type vendor --vendor HP --model \"P2000 G3 FC\"",
+         /* Add the VAAI Rule for FC */
+         "storage core claimrule add --claimrule-class VAAI --autoassign --plugin HP_VAAIP_P2000 --type vendor --vendor HP --model \"P2000 G3 FC\"",
+
+         /* Add the Filter Rule for Texans */
+         "storage core claimrule add --claimrule-class Filter --autoassign --plugin VAAI_FILTER --type vendor --vendor HP --model \"P2000G3 FC\/iSCSI\"",
+         /* Add the VAAI Rule for Texans */
+         "storage core claimrule add --claimrule-class VAAI --autoassign --plugin HP_VAAIP_P2000 --type vendor --vendor HP --model \"P2000G3 FC\/iSCSI\"",
+
+         /* Add the Filter Rule for iSCSI */
+         "storage core claimrule add --claimrule-class Filter --autoassign --plugin VAAI_FILTER --type vendor --vendor HP --model \"P2000 G3 iSCSI\"",
+         /* Add the VAAI Rule for iSCSI */
+         "storage core claimrule add --claimrule-class VAAI --autoassign --plugin HP_VAAIP_P2000 --type vendor --vendor HP --model \"P2000 G3 iSCSI\"",
+
+         /* Add the Filter Rule for SAS */
+         "storage core claimrule add --claimrule-class Filter --autoassign --plugin VAAI_FILTER --type vendor --vendor HP --model \"P2000 G3 SAS\"",
+         /* Add the VAAI Rule for SAS */
+         "storage core claimrule add --claimrule-class VAAI --autoassign --plugin HP_VAAIP_P2000 --type vendor --vendor HP --model \"P2000 G3 SAS\"",
+
+      ]
+   }
+   ,
+   "metadata" :
+   {
+      "version"  : 1,
+      "requires" : ["vmkeventd", "vmkernel vmkapi compatibility", "PSA filter pre-claim configuration"],
+      "provides" : ["PSA Filter claim rules", "PSA VAAI claim rules", "storage i/o multipathing"]
+   }
+}
+

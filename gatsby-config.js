@@ -10,6 +10,10 @@ module.exports = {
     social: {
       twitter: `yinkakun`,
     },
+    validate: {
+      google: "A49bqpeNUkd_XgQ6WKa0OW-Nf_obDgfIjJqj6tJlFjI",
+      bing: "29841345DBDC3E893E4C85D0BB154B73",
+    },
     socialLinks: [
       {
         name: 'github',

@@ -11,6 +11,10 @@ const SEO = ({ description, lang, meta, title }) => {
           siteMetadata {
             title
             description
+            validate {
+              google
+              bing
+            }
             social {
               twitter
             }
@@ -63,6 +67,14 @@ const SEO = ({ description, lang, meta, title }) => {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `google-site-verification`,
+          content: site.siteMetadata?.validate?.google || ``,
+        },
+        {
+          name: `msvalidate.01`,
+          content: site.siteMetadata?.validate?.bing || ``,
         },
       ].concat(meta)}
     />
