@@ -151,7 +151,7 @@ There's several key items in this piece of code, which are highly valuable when 
 - We used our parser's href value, as opposed to deciding it "passed" then using the original string
 
 This will very clearly ensure we have a valid, secure HREF to put in place.
-It's worth reviewing [the API for the URL function](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL) here. A special case to consider is that a URL is usually relative. For example, `<a href=/mypage.html>` from here should land you on https://lolware.net/mypage.html.
+It's worth reviewing [the API for the URL function](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL) here. A special case to consider is that a URL is usually relative. For example, `<a href=/mypage.html>` from here should land you on `https://lolware.net/mypage.html`.
 That's usually desirable when I'm writing my own website, and you can get this behaviour by coding in a base URL. eg, `const safeURL = new URL(name, "https://lolware.net")`. However when you're taking user input, it's usually not desirable,it usually means the user made a mistake and the above feature will throw an error in a way that may be more in line with what you'd like to see.
 There's a second special edge case here. What if a URL was `google.com` ? The browser's built in parser considers it invalid unless it contains a protocol. Which is "correct" for code you write yourself, but a user may just write "www.google.com". Here's a way to satisfy that:
 ```javascript

@@ -11,7 +11,7 @@ const AboutTemplate = ({ data }) => {
   return (
     <Layout title={frontmatter.title}>
       <AboutWrapper>
-        <AboutImageWrapper image={profileImage} alt="" />
+        <AboutImageWrapper image={profileImage} alt="Gandalf best cat" />
 
         <AboutCopy dangerouslySetInnerHTML={{ __html: html }} />
       </AboutWrapper>
