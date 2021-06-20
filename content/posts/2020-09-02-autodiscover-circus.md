@@ -6,13 +6,13 @@ social_image: '/media/images/somuchwin.png'
 tags: [autodiscover, vulnerabililty]
 ---
 
-# Layout
+## Layout
 
 It's fairly common for an organisation's website to exist outside the organisation's operational security policies. There's a common justification that for many organisations, the website is a marketing landing page and no sensitive data is ever involved. This in turn oftens leads to the prevance of, for example, shared hosting companies holding dozens of compromised Wordpress sites at a time.
 
 We regularly see this when major businesses are compromised. This is unfortunate.
 
-# Autodiscover noise
+## Autodiscover noise
 
 Anyone who has read the web access log on such a server has probably found themselve Googling what autodiscover.xml is. Here's an example from my own server, of something which may be rare if you have a few users. I grepped an larger organisation's log and found around 1200 hits per day.
 
@@ -30,7 +30,7 @@ A more practical, and digestable article for people not often working with Offic
 
 I quite like this article as the reference to the web hosting circus will be quite familiar to anyone who has had to support the average shared hosting environment. Those people will be familiar with how common hacked websites are.
 
-# About that hacked webserver
+## About that hacked webserver
 
 The problem with the autodiscovery situation described is that I can put a redirect in my web server's nginx config:
 
@@ -89,11 +89,9 @@ server.mount "/", Echo
 trap "INT" do server.shutdown end
 server.start
 
-
-
 ```
 
-# Secure Corporate Assets. Insecure website. User Passwords Dumped Anyway
+## Secure Corporate Assets. Insecure website. User Passwords Dumped Anyway
 
 Now obviously before I wrote this blog, I setup a temporary account and connected Outlook. Running the above code on my server started pumping this sort of content to the console.
 
@@ -105,7 +103,7 @@ $ ./webrickprint.rb
 Credential Dump: exampleuser@lolware.net:thiscouldbeyourpassword
 ```
 
-# Mitigations
+## Mitigations
 
 Microsoft's article discusses the *ExcludeHttpRedirect* registry key, but for most cases it's not a solution as it won't impact mobile users or anyone not using your exact version of Outlook on a corporate device.
 

@@ -1,11 +1,11 @@
 ---
-title: Open Source marketing after two years of monitoring SSL issuance
+title: Open Source marketing after two years
 description: CT Advisor has been auditing transparency for two years
 date: 2018-01-16
 tags: [Open Source]
 ---
 
-# A quick history of CT Advisor
+## A quick history of CT Advisor
 
 I initially jumped on the [CT Advisor](https://ctadvisor.lolware.net/) idea as soon as I read Google's Certificate Transparency announcements. The CT Log is a great security acheivement, and the ability to get an email the moment someone issued a cert for your domain is a great security offering.
 

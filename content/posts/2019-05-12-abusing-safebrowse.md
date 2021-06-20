@@ -4,11 +4,9 @@ description: What safebrowse looks for, and finding it yourself
 date: 2019-05-12
 tags: [google, safebrowse]
 ---
-
-# When Google Safebrowse scans your site
+## When Google Safebrowse scans your site
 
 I recently submitted a non existent page to Google Safebrowsing, using [this link](https://www.google.com/safebrowsing/report_phish/).
-
 The first result was largley as expected - a hit from a Google IP address scanning that page.
 
 ```
@@ -36,14 +34,12 @@ x.x.x.x - - [23/Apr/2019:08:13:47 +1000] "GET /accepted_visitors.txt HTTP/1.0" 4
 ```
 
 A early hypothesis here is that this a list of files Google found associated with known phishing kits.
-
-# Recreating this script
+## Recreating this script
 
 I've written a Ruby script which you can find here, which replicates this scan. With a bit of regex against my own log file, we can generate a list of just over 200 URLs that may be interesting to us.
 
 You can find it here: [https://gist.github.com/technion/cf433786d770e4a270e40f725f0e00e5](https://gist.github.com/technion/cf433786d770e4a270e40f725f0e00e5)
-
-# A good target
+## A good target
 
 Anyone with access to a spam quarantine should have thousands of phishing URLs at the ready, and in most cases they are unreported. A good example was found in a URL involving the extremely heavily abused 000webhostapp.com domain. Although they were responsive to my reports and pulled the site down in literally minutes, I censored this full domain as I couldn't guarantee the file involved wasn't found in a search cache somewhere. 
 
@@ -56,8 +52,7 @@ $ ./phishget.rb https://xxx.000webhostapp.com/GoogleDocs
 Interesting URL found: /melog-india.txt
 Successfully scanned 217 URLs
 ```
-
-# Phishing kits - and answers
+## Phishing kits - and answers
 
 The majority of the "interesting" URLs scanned, based on filenames at least, appear to be the zip files common phishing kits are distributed in. However, more interesting to us is the list of filenames that common phishing kits apparently store captured passwords in. Whilst the attacker themselves told us they had a phishing site, it's this scan that helped us see that melog-india.txt is apparently a known place to dump credentials. Because it turns out that yes,
 
