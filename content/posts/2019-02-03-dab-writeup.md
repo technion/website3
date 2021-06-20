@@ -5,11 +5,11 @@ date: 2019-02-03
 tags: [Hack the Box, DAB]
 ---
 
-# Introduction to the target.
+## Introduction to the target.
 
 Here we present a writeup of the "Dab" server and the applications it hosts. As we walk through each issue identified, we'll recommend a suitable mitigation against exploitation. A quick review of open services gives us a few targets.
 
-## FTP
+### FTP
 The ftp service accepts anonymous logons appears to have the single purpose of serving the organisation logo.
 
 ![Dab Logo](/media/images/dab.jpg)
@@ -17,7 +17,7 @@ The ftp service accepts anonymous logons appears to have the single purpose of s
 ### Recommendation
 Although no significant issue is currently found here, in order to reduce attack surface, this service should be considered for removal.
 
-## Web 
+### Web 
 
 The web application service initially confronts a viewer with a username/password prompt. By testing several passwords, it can be identified that there is no account lockout or rate limiting in place, leading to an obvious potential for brute forcing. The following hydra script has been designed for the site in question:
 
@@ -28,7 +28,7 @@ hydra -l admin -P /usr/share/wordlists/rockyou.txt <address> http-post-form "/lo
 
 It takes just a few minutes to identify a valid logon, and it should be stressed that the identified credentials meet strict password complexity policies. That is, it contained upper case, lower case, and numeric characters. Accordingly, such policies are not the solution to this type of problem.
 
-## Developers console
+### Developers console
 
 The second service to review is the developer's console, on port 8080. This service utilises a more complex authentication system. The below custom code was built from reviewing browser interactions with the site, and will similarly brute force a valid credentials.
 
@@ -201,5 +201,4 @@ genevieve
 $ id
 uid=1000(genevieve) gid=0(root) groups=0(root),1000(genevieve)
 ```
-
 And with root access, the attacker has full control of the machine. Our recommendation in response is to move development projects off the production servers.

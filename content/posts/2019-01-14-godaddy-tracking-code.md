@@ -5,7 +5,7 @@ date: 2019-01-14
 tags: [godaddy, tracking]
 ---
 
-# Background
+## Background
 An article by Igor Kromin has provided an insight into a practice by GoDaddy involving injecting Javascript into customer sites. Several people expressed interest in a breakdown of the script - so here it is. [Please review Igor's original blog for further background](https://www.igorkromin.net/index.php/2019/01/13/godaddy-is-sneakily-injecting-javascript-into-your-website-and-how-to-stop-it/)
 
 Despite this having blown up just this week, GoDaddy have clearly been doing this for a while. Here's an apparent copy of the code dated September 4, 2017:
@@ -14,7 +14,7 @@ Despite this having blown up just this week, GoDaddy have clearly been doing thi
 You can also enjoy seeing an ARG that were thrown off by it in September 2018:
 [Game Theorists Thread](https://www.reddit.com/r/GameTheorists/comments/9gcv53/game_theory_what_is_matpat_hiding_the_game/). Alternatively you may enjoy seeing a malicious site [that shipped with this code in a sandbox](https://www.hybrid-analysis.com/sample/e6a3d76e46c3aadb5cfe79cb64af39df833f323efde93cb83645d00347d23b32?environmentId=100)
 
-# Baseline
+## Baseline
 
 I've built an empty website and copied the tracking code onto it. You can find the source in [this repo](https://github.com/technion/trackingsadness). There's a commit for every major step if you'd like to play along.
 
@@ -26,27 +26,27 @@ It's obvious a lot of this is performance related, but at this point, I can't ac
 
 ![Tracking Parameters](/media/images/trackingsadness2.jpg)
 
-# Cleanup
+## Cleanup
 
-## Source map - 404
+### Source map - 404
 The script is interestingly worked. It's minified, in that all the variables are garbage. However, several comments remain. There's a source map referenced:
 
     //# sourceMappingURL=tcc_l.combined.1.0.6.min.js.map
 
 But it doesn't appear to exist online. We can't be surprised about this for code that's published online, but it never hurts to look.
 
-## Prettier
+### Prettier
 So our first job has been to run it through prettier, to make it nice and readable. This makes no actual code changes, and can be seen on the initial commit.
 
 This acheives quite a bit on its own.
 
-## IFFEs
+### IFFEs
 
 Javascript gets a lot of crap, but it doesn't get nearly enough crap specifically about the IFFE. Refactoring to remove the outer IIFE makes the code a lot more readable. It also moves all the functions to the global space. You generally don't want that, but for us, it means we can access everything directly from the browser. Below you can see that the entire codebase is about exporting three different functions, noting we just wrote a() and b() ourselves.
 
 ![Exported Functions](/media/images/trackingsadness3.jpg)
 
-# Disecting the remaining code
+## Disecting the remaining code
 
 Let's skip to line 7 of the original codebase.
 
@@ -123,7 +123,7 @@ With that massive tl;dr out of the way, I'm going to replace the whole of c() wi
 
 We've reloaded and run our console test, so by [this commit](https://github.com/technion/trackingsadness/commit/a180601eb63b636331a5b2b9996b5f0dd6acb0eb) code is looking a lot easier.
 
-# "Node testabiity check"
+## "Node testabiity check"
 This exists in a few places:
 
 ``` javascript
@@ -134,7 +134,7 @@ This exists in a few places:
 
 I'll be blunt, I can't work out what this does, but I don't believe it's significant in the browser. If a node person wants to add input here, please do.
 
-# Function 'd'
+## Function 'd'
 
 You can cheat with this function by looking at the return, where you're shown this is basically a class with a series of functions. By using the known names to rename each function, we can make it a lot more readable.
 
@@ -146,7 +146,7 @@ If you think Typescript is just about making people write types.. moments like t
 
 With that in place, most of function d() is self explanatory. The _eventObject() function does however look pretty interesting.
 
-# Function 'e'
+## Function 'e'
 
 There's something odd going on in a big try/catch block. If you look at this code, you get a sudden understanding of the intent for every non-obvious parameter supplied to the tracker from the initial screenshot.
 
@@ -170,7 +170,7 @@ There's something odd going on in a big try/catch block. If you look at this cod
               (e.tlee = a.performance.timing.loadEventEnd || 0),
 ```
 
-# Further cleanup
+## Further cleanup
 
 This is odd:
 
@@ -182,7 +182,7 @@ Happily blowing away our function when done. Let's remove and the associated 'if
 
 As of [this commit](https://github.com/technion/trackingsadness/tree/4fd4f3bc7d3e02cc59be982de6942211c79582b4), we know we're basically dealing with our new "trackrun" function, which uses the already reviewed functions to generate performance and tracking information.
 
-# Sent Data
+## Sent Data
 
 Based on the above, we can break down the following which is sent to GoDaddy's servers after visiting an infected website. You may be interested in [the performance API](https://developer.mozilla.org/en-US/docs/Web/API/Window/performance) for some of these details.
 
@@ -222,7 +222,7 @@ dp: window.location.pathname
 
 The two cookies stored by this code are \_tccl\_visit and \_tccl\_visitor, both which appear to hold a GUID referencing your user.
 
-# The final function
+## The final function
 
 The minifier here made extensive use of unintelligible hoisting rules - variables were usually declared below where they were used, or assigned in different functions. Breaking something never produced any warnings or errors, the browser would just say "this is fine" and not execute the function. 
 
