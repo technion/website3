@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'gatsby';
-import Tags from './tags';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "gatsby";
+import Tags from "./tags";
 
 const PostList = ({ posts }) => {
   const PostList = posts.map(({ frontmatter, fields, excerpt, timeToRead }) => {
@@ -107,7 +107,7 @@ const PostListTitle = styled.h2`
   }
 
   & a::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     bottom: 0;

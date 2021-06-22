@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'gatsby';
-import Container from './container';
-import { useStaticQuery, graphql } from 'gatsby';
-import SocialLinks from './social-links';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "gatsby";
+import Container from "./container";
+import { useStaticQuery, graphql } from "gatsby";
+import SocialLinks from "./social-links";
 
 const Header = () => {
   const { site } = useStaticQuery(
@@ -27,7 +27,7 @@ const Header = () => {
 
         <HeaderNavList>
           <HeaderNavListItem>
-    <SocialLinks />
+            <SocialLinks />
           </HeaderNavListItem>
 
           <HeaderNavListItem>

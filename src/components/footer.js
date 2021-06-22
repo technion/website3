@@ -1,14 +1,13 @@
-import React from 'react';
-import Container from './container';
-import styled from 'styled-components';
+import React from "react";
+import Container from "./container";
+import styled from "styled-components";
 
 const Footer = () => {
   return (
     <StyledFooter>
       <FooterWrapper>
-
         <FooterAttribution>
-          Built from a theme by{' '}
+          Built from a theme by{" "}
           <a href="https://twitter.com/yinkakun">Yinka Adedire</a>
         </FooterAttribution>
       </FooterWrapper>

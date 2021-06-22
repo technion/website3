@@ -16,8 +16,8 @@ module.exports = {
     },
     socialLinks: [
       {
-        name: 'github',
-        url: 'https://github.com/technion/',
+        name: "github",
+        url: "https://github.com/technion/",
       },
     ],
   },
@@ -28,23 +28,23 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         name: `media`,
         path: `${__dirname}/static/media`,
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'pages',
+        name: "pages",
         path: `${__dirname}/content/pages`,
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'posts',
+        name: "posts",
         path: `${__dirname}/content/posts`,
       },
     },
@@ -55,7 +55,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-relative-images`,
             options: {
-              staticFolderName: 'static',
+              staticFolderName: "static",
             },
           },
           {
@@ -100,7 +100,7 @@ module.exports = {
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ 'content:encoded': node.html }],
+                  custom_elements: [{ "content:encoded": node.html }],
                 });
               });
             },
@@ -123,7 +123,7 @@ module.exports = {
                 }
               }
             `,
-            output: '/rss.xml',
+            output: "/rss.xml",
           },
         ],
       },
