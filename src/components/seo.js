@@ -77,6 +77,20 @@ const SEO = ({ description, lang, meta, title }) => {
           content: site.siteMetadata?.validate?.bing || ``,
         },
       ].concat(meta)}
+      link={[
+        {
+          rel: "preload",
+          href: "/media/fonts/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2",
+          as: "font",
+          crossorigin: "anonymous",
+        },
+        {
+          rel: "preload",
+          href: "/media/fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7l.woff2",
+          as: "font",
+          crossorigin: "anonymous",
+        },
+      ]}
     />
   );
 };
