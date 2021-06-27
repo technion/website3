@@ -90,6 +90,12 @@ const SEO = ({ description, lang, meta, title }) => {
           as: "font",
           crossorigin: "anonymous",
         },
+        {
+          rel: "preload",
+          href: "/media/fonts/pxiEyp8kv8JHgFVrJJfecg.woff2",
+          as: "font",
+          crossorigin: "anonymous",
+        },
       ]}
     />
   );
