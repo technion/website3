@@ -4,6 +4,12 @@ const DoomCaptcha = () => {
     return atob(encoded.replace("!!", "GV"));
   };
 
+  const isSSR = typeof window === "undefined";
+
+  if (isSSR) {
+    return null;
+  }
+
   window.addEventListener(
     "message",
     function (e) {
