@@ -124,7 +124,7 @@ Unfortunately at this point this project experienced some additional technical d
 ![MfaNpsAuthzExt.dll XML](/media/images/mfaext/marcel.jpg)
 
 ## Using it for privilege management
-But, I hear you ask, "I was promised a way to use this in a domain". Fortunately I already had Microsoft JEA (Just Enough Administration) scripts lying around for use in temporarily elevating privileges. Based loosely on scripts [previously described here](./2019-07-13-ad-security-with-pam/) you can find one below which uses the above process to temporarily promote a user to a Domain Admin, with an MFA check.
+But, I hear you ask, "I was promised a way to use this in a domain". Fortunately I already had Microsoft JEA (Just Enough Administration) scripts lying around for use in temporarily elevating privileges. Based loosely on scripts [previously described here](/blog/2019-07-13-ad-security-with-pam/) you can find one below which uses the above process to temporarily promote a user to a Domain Admin, with an MFA check.
 
 Any time limited group membership will require the PAM feature enabled in AD:
 ```
