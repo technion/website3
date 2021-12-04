@@ -5,18 +5,18 @@ date: 2015-04-28
 tags: [fuzzing, nginx]
 ---
 
-### No 0day here
+## No 0day here
 
 If you were looking for it, sorry. As of 48 hours of fuzzing, I've got 0 crashes.
 
 
-### AFL - successful fuzzing
+## AFL - successful fuzzing
 
 [American Fuzzy Lop](http://lcamtuf.coredump.cx/afl/) has a very impressive history of finding vulnerabilities. The trophy case is gigantic. An ELI5 of the design of the product is: Give it a program a valid input file, and it will mess with that input file until using it crashes the example program. [My first attempt at using it almost immediately found a crash situation in lci - Lolcode interpreter](https://github.com/justinmeza/lci/commit/8c66da06673d4017e718d3db15247361a7930e80).
 
 Unfortunately, successful use against something which is not a command line application that runs and quits is more difficult.
 
-### Compile and build
+## Compile and build
 
 Our first step here will be to compile afl. I'm going to assume you can already do this. When building nginx, I used the following commands:
 
@@ -48,7 +48,7 @@ We do this because:
 	* We want the parser to decide it's happy to run as non-root
 	* Without specifying the IP, something doesn't bind properly in our later process.
 
-### Operate with stdin/stdout
+## Operate with stdin/stdout
 
 Following the suggested build gets you halfway there, but the remaining problem is that nginx wants to take input from a network port, not from stdin. Fortunately, this project exists:
 
@@ -85,13 +85,12 @@ index 36b3db7..4b267ef 100644
 
 Again, compile as per the Preeny instructions, I won't walk you through this.
 
-### Running it
+## Running it
 
 With this in place, you can run nginx from the command line, and have it take HTTP syntax from stdin.
 
 
-{% highlight bash %}
-
+```
 $ LD_PRELOAD="/home/technion/attack/preeny/Linux_x86_64/desock.so "  ./nginx
 --- Emulating bind on port 8020
 GET / HTTP/1.0
@@ -131,13 +130,11 @@ Commercial support is available at
 <p><em>Thank you for using nginx.</em></p>
 </body>
 </html>
-
-{% endhighlight %}
+```
 
 This is successful.. almost. The problem you now see is that nginx never actually exits. To get around this, we had to patch nginx itself. Specifically, at line 262, I added this:
 
-{% highlight c %}
-
+```
     static int first_fd = 0;
     if (first_fd == 0)
             first_fd = max_fd;
@@ -146,14 +143,13 @@ This is successful.. almost. The problem you now see is that nginx never actuall
             printf("Exiting cleanly\n");
             exit(0);
     }
-{% endhighlight %}
+```
 
 I'm sure there's a better place to patch, but this seemed to be the easiest for me to find. Specifically, when it knows it's been through the event loop once before and actually accepted a connection already, it'll log as such and exit.
 
 Now, let's get a proper test case up and running. I created _testcases/in.txt_, based on a standard HTTP connection:
 
-{% highlight bash %}
-
+```
 GET / HTTP/1.1
 Acceptx: text/html, application/xhtml+xml, */*
 Accept-Language:en-AU
@@ -163,13 +159,11 @@ Host: lolware.net
 DNT: 1
 Connection: Keep-Alive
 Cookie: A=regregergeg
-
-{% endhighlight %}
+```
 
 Now let's execute it and see how that looks:
 
-{% highlight bash %}
-
+```
 $ LD_PRELOAD="/patch/preeny/Linux_x86_64/desock.so "  ./nginx < testcases/in.txt
 --- Emulating bind on port 8020
 HTTP/1.1 200 OK
@@ -209,7 +203,7 @@ Commercial support is available at
 </html>
 Exiting cleanly
 $
-{% endhighlight %}
+```
 
 That right there is perfect. It takes the input file from stdin, and passes it to nginx, outputs the HTML web content, then quits.
 
