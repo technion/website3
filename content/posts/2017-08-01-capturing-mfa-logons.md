@@ -5,7 +5,7 @@ date: 2017-08-01
 tags: [intercept, MFA]
 ---
 
-# Intercepting and Capturing MFA Logons
+## Intercepting and Capturing MFA Logons
 
 One of the interesting classes of vulnerabiltiies are those that are fairly well known to security professionals, and yes, generally equally well known to criminals. Yet bizarrely, usually considered non-issues, or impossible by decision makers and standards groups. We're going to talk about one of those.
 
