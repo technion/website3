@@ -1,5 +1,5 @@
 ---
-title: Using MFA for on premises Active Directory
+title: Using Azure MFA for on premises Active Directory
 description: Protecting assets with Azure MFA without going cloud
 date: 2021-12-02
 social_image: '/media/images/somuchwin.png'
