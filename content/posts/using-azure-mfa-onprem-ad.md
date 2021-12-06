@@ -50,7 +50,7 @@ There's one error output, where it fails to restart the service that doesn't exi
 
 ## Replicating the MFA push
 
-This section details how we worked out the process, which you can skip if you just want to impelement it. And frankly, it shows you there's nothing to this more than writing Powershell to use existing functionality.
+This section details how we worked out the process, which you can skip if you just want to implement it. And frankly, it shows you there's nothing to this more than writing Powershell to use existing functionality.
 
 If you look through the script we just ran, you can see it activated an Azure application. It setup a Service Principal for using that application, and it created a certificate to act as a key to that application. You can see all these things in the Azure portal, and you can see that certificate here:
 
@@ -96,7 +96,7 @@ So given we had a fully working authorisation and just needed the API to use it,
 
 By looking at where those strings are used, you can find a complete XML template in the midst of the string assembling it.
 
-![MfaNpsAuthzExt.dll XML](/media/images/mfaext/mfaxml.jpg)
+![MfaNpsAuthzExt.dll XML](/media/images/mfaext/mfaxmldecom.jpg)
 
 Armed finally with some key phrases, you find the one single hit on Google that describes the XML in question. On page that that seemed buried during hours of searches on this problem, it seems someone's used a different reverse engineering process and produced a working script with similar goals.
 
