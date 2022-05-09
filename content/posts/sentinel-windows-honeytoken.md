@@ -1,6 +1,6 @@
 ---
 title: Using Microsoft Sentinel to roll honey tokens on Windows
-description: Exploit poc
+description: Proactive incident monitoring
 date: 2022-05-09
 social_image: '/media/images/somuchwin.png'
 tags: [kusto, sentinel, honeytoken]
@@ -41,7 +41,7 @@ In a default Microsoft Sentinel configuration, the above log is one which is shi
 
 Open up Sentinel and hit up "Analytics". Specifically, https://portal.azure.com/#blade/Microsoft_Azure_Security_Insights/MainMenuBlade/Analytics/ and start creating a new rule. I could create a series of screenshots, but they are all here: https://docs.microsoft.com/en-us/azure/sentinel/detect-threats-custom
 
-Here's the simple script that we need:
+Here's the query script that we want:
 ```kusto
 SecurityEvent
 | where Computer == "myserver.fqdn.com"
