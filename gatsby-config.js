@@ -124,6 +124,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
+            title: "Lolware",
           },
         ],
       },
