@@ -9,7 +9,7 @@ tags: [kusto, sentinel, honeytoken]
 
 A recurrent theme in both real life attacks and penetration tests has been the scanning of local networks for spreadsheets full of data. Many people simply don't believe such things aren't worth looking for to real world attackers, but the highly publicised breach on Okta shows just one great counter example: https://techcrunch.com/2022/03/28/lapsus-passwords-okta-breach/
 
-You may also want to consider the existence of tools such as Snarfler.
+You may also want to consider the existence of tools such as [Snaffler](https://github.com/SnaffCon/Snaffler).
 
 There are plenty of tools and products designed to alert you *after a credential is used*. However, here we believe we can provide an earlier warning system.
 
@@ -19,7 +19,7 @@ A common tool utilised on engagements is "crackmapexec", or similar tools which 
 
 ![An example honeypot file](/media/images/honeytoken/honeytoken1.jpg)
 
-Of course that folder is shared, so network users are going to find \\SERVER\ITSupport\Password List.xlsx.
+Of course that folder is shared, so network users are going to find `\\SERVER\ITSupport\Password List.xlsx`.
 
 ## Generating Event Logs
 
