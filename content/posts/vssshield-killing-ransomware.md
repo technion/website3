@@ -10,11 +10,12 @@ tags: [ransomware, shadow copies]
 Ransomware has a long history of deleting shadow copies from an infected machine, in an attempt to hinder recovery. It's relevant to keep in mind that doing so requires local administrator permissions, so where it does not have those, some ransomware can be recovered from using Shadow Copies. A famous ransomware example is Wannacry, documented below to use this attack.
 
 https://www.mcafee.com/blogs/other-blogs/executive-perspectives/analysis-wannacry-ransomware-outbreak/
+
 Where it is documented:
 
-By using command-line commands, the Volume Shadow copies and backups are removed:
+*By using command-line commands, the Volume Shadow copies and backups are removed:*
 
-Cmd /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet
+`Cmd /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet`
 
 You can also see a discussion here on the rise of relevant malware:
 
