@@ -3,7 +3,7 @@ title: Windows 11 - Enable "Firmware Protection" by InTune or otherwise
 description: Using InTune or otherwise, you may struggle to enable Microsoft's feature "Firmware Protection"
 date: 2024-01-05
 social_image: '/media/images/somuchwin.png'
-tags: [CVE-2022-0316, Wordpress, themes]
+tags: [InTune, Windows 11, Firmware Protection]
 ---
 ## Windows 11 - Firmware Protection setting is not simply a setting
 
@@ -22,6 +22,6 @@ I'm sitting on a business class, HP Elitebook only a few months old, but it turn
 
 ![TXT Disabled in BIOS](/media/images/txtdisabled.png)
 
-I have no knowledge of whether this persists across other vendors, but threads complaining noone can setup InTune right for this feature are common.
+I have no knowledge of whether this persists across other vendors, but threads complaining noone can setup InTune right for this feature are common. As far as I can see, InTune only keeps coming up because people working on new baselines for Windows 11 are probably using InTune.
 
 The manual for this model of laptop actually describes a BIOS setting to enable the TXT feature - but with the latest BIOS it simply isn't there. I've had a case open for a while and it appears to be acknowledged, and I'll update this blog as information becomes available.
