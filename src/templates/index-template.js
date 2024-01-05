@@ -69,8 +69,8 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { fields: { contentType: { eq: "posts" } } }
-      sort: { order: DESC, fields: frontmatter___date }
+      filter: {fields: {contentType: {eq: "posts"}}}
+      sort: {frontmatter: {date: DESC}}
       limit: 9
     ) {
       nodes {
@@ -87,7 +87,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    markdownRemark(fields: {slug: {eq: $slug}}) {
       html
       frontmatter {
         title

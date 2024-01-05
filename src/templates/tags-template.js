@@ -58,11 +58,8 @@ export const pageQuery = graphql`
   query($tag: String) {
     allMarkdownRemark(
       limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: {
-        frontmatter: { tags: { in: [$tag] } }
-        fields: { contentType: { eq: "posts" } }
-      }
+      sort: {frontmatter: {date: DESC}}
+      filter: {frontmatter: {tags: {in: [$tag]}}, fields: {contentType: {eq: "posts"}}}
     ) {
       totalCount
       nodes {
