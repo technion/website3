@@ -9,7 +9,7 @@ tags: [openRT, RCE ]
 
 Here we're going to conduct a web application security review of the OpenRT application.
 
-[openRT Gitghub](https://github.com/amcchord/openRT/)
+[openRT Github](https://github.com/amcchord/openRT/)
 
 Installed from commit 59185b055ab2cf79e2fc2b1854c11e1a0bb5f798, the latest as of 20-03-25. This is a nice application to review because:
 
