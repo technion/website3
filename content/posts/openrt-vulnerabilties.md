@@ -9,7 +9,7 @@ tags: [openRT, RCE ]
 
 Here we're going to conduct a web application security review of the OpenRT application.
 
-[https://github.com/amcchord/openRT/]
+[openRT Gitghub](https://github.com/amcchord/openRT/)
 
 Installed from commit 59185b055ab2cf79e2fc2b1854c11e1a0bb5f798, the latest as of 20-03-25. This is a nice application to review because:
 
@@ -27,11 +27,11 @@ And to be clear, this is an **entirely acceptable** position as long as you, the
 
 ## Exposed phpinfo()
 
-As a minor annoyance, [http://172.17.44.48/phpinfo.php] is exposed in a default build.
+As a minor annoyance, http://172.17.44.48/phpinfo.php is exposed in a default build.
 
 ## Arbitrary download
 
-To describe an actual vulnerability, we can review the file download code here: [https://github.com/amcchord/openRT/blob/main/web/download.php], specifically:
+To describe an actual vulnerability, we can review the file download code here: [download.php](https://github.com/amcchord/openRT/blob/main/web/download.php), specifically:
 
 ```php
 
@@ -65,7 +65,7 @@ bin:x:2:2:bin:/bin:/usr/sbin/nologin
 
 ## RCE
 
-Finally we get to the good stuff. Let's look at [https://github.com/amcchord/openRT/blob/main/web/check_mount.php]
+Finally we get to the good stuff. Let's look at [check_mount.php](https://github.com/amcchord/openRT/blob/main/web/check_mount.php)
 
 ```php
 $mount_path = "/rtMount/$agent_id";
@@ -106,7 +106,7 @@ www-data@openrt:/usr/local/openRT/web$
 
 ## Root Privilege Elevation
 
-The setup file [https://github.com/amcchord/openRT/blob/main/setup/kioskSetup.sh] adds sudo privileges for the www-data user for a few specific commands. We can review `rtImport.pl` for this interesting line:
+The setup file [kioskSetup.sh](https://github.com/amcchord/openRT/blob/main/setup/kioskSetup.sh) adds sudo privileges for the www-data user for a few specific commands. We can review `rtImport.pl` for this interesting line:
 
 ```perl
         $status = `zpool import -d $device $pool_name 2>&1`;
@@ -129,7 +129,7 @@ Given we can use this privesc immediately following the previous RCE, we now hav
 
 ## Easily brute forced credentials
 
-Default credentials are usually acceptable if you are pushed to change them, but as far as I can tell there's no documented method of changing the generated credential. The file [https://github.com/amcchord/openRT/blob/main/setup/nasSetup.sh] uses this code:
+Default credentials are usually acceptable if you are pushed to change them, but as far as I can tell there's no documented method of changing the generated credential. The file [nassetup.sh](https://github.com/amcchord/openRT/blob/main/setup/nasSetup.sh) uses this code:
 
 ```
 RANDOM_NUM=$(printf "%04d" $((RANDOM % 10000)))
