@@ -1,9 +1,9 @@
 ---
 title: Using Powershell to manage binary registry keys
 description: Getting and setting REG_BINARY keys
-date: 2025-02-20
+date: 2025-04-11
 social_image: '/media/images/somuchwin.png'
-tags: [[pwershel, registry] ]
+tags: [powershell, registry] 
 ---
 # Managing Binary Registry Keys
 
